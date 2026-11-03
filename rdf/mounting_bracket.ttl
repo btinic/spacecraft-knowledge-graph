@@ -1,0 +1,7 @@
+@prefix sc: <https://example.org/spacecraft#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sc:MountingBracket sc:ixxOriginKgM2 4.2795e-06 ;
+    sc:massKg 0.02025 ;
+    sc:volumeMm3 7500.0 .
+
