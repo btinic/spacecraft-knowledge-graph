@@ -1,7 +1,0 @@
-@prefix sc: <https://example.org/cubesat#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-sc:MountingBracket sc:inertiaXUnitDensity 1585000.0000 ;
-    sc:massUnitDensity 7500.0000 ;
-    sc:volumeMm3 7500.0000 .
-
