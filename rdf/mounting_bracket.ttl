@@ -1,0 +1,13 @@
+@prefix sc: <https://github.com/btinic/spacecraft-knowledge-graph#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sc:MountingBracket sc:centroidXmm -991.0149 ;
+    sc:centroidYmm 257.1574 ;
+    sc:centroidZmm -17.5000 ;
+    sc:inertiaXUnitDensity 6937783227.3237 ;
+    sc:massUnitDensity 103889.3464 ;
+    sc:principalInertiaIUnitDensity 35770804.0520 ;
+    sc:principalInertiaJUnitDensity 97126652.3453 ;
+    sc:principalInertiaKUnitDensity 110753440.9337 ;
+    sc:volumeMm3 103889.3464 .
+
