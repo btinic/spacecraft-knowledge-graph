@@ -14,7 +14,7 @@ def to_rdf(report: str) -> Graph:
     )
     return Graph().parse(
         data=f"""
-        @prefix sc: <https://example.org/cubesat#> .
+        @prefix sc: <https://github.com/btinic/spacecraft-knowledge-graph#> .
 
         sc:MountingBracket
             sc:volumeMm3 {re.search(r"Volume:\s*([-\d.E+]+)", report).group(1)} ;

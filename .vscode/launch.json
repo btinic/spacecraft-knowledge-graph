@@ -2,12 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug CAD-to-RDF",
+      "name": "Debugger CAD-to-RDF",
       "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/src/cad_to_rdf.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}",
+    },
+    {
+      "name": "Debugger Interrogate the Bracket",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/interrogate_the_bracket.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
     }
   ]
 }

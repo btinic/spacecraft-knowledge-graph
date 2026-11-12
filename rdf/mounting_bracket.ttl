@@ -1,4 +1,4 @@
-@prefix sc: <https://example.org/cubesat#> .
+@prefix sc: <https://github.com/btinic/spacecraft-knowledge-graph#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 sc:MountingBracket sc:centroidXmm -991.0149 ;
