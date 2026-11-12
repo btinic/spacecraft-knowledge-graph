@@ -4,17 +4,22 @@ Objective: Demonstrate the feasibility of integrating CAD-derived spacecraft eng
 
 Use Case 1 — CAD-to-RDF Integration
 
-A simplified CubeSat mounting bracket will be modeled in AutoCAD.
+A simplified CubeSat mounting bracket was modeled in AutoCAD.
 
-The workflow will:
+The workflow has been implemented as follows:
 
-Extract volume, mass, center of mass, and moments of inertia from the CAD model.
+Extract volume, unit-density mass, center of mass, and moments of inertia from the CAD model using AutoCAD's MASSPROP.
+Export the mass-property report to data/mounting_bracket.mpr.
 Import the engineering properties using Python.
 Represent the component and its properties as RDF triples using RDFLib.
-Knowledge graph using SPARQL.
+Query the generated knowledge graph using SPARQL.
 Validate the retrieved values against the original CAD results.
 
-The initial implementation will use a file-based export. The workflow will then be made repeatable, allowing updated CAD properties to be imported without manually re-entering the measurements.
+The initial implementation uses a file-based export. The workflow is now repeatable, allowing updated CAD properties to be imported without manually re-entering the measurements.
+
+The Python scripts cad_to_rdf.py and interrogate_the_bracket.py perform the RDF conversion and SPARQL retrieval, respectively. 
+
+Both can be executed through dedicated VS Code debugger configurations.Two automated pytest tests verify the extracted mechanical properties and SPARQL query results against the original AutoCAD data. 
 
 Use Case 2 — Power-Budget Integration
 
