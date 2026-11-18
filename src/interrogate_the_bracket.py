@@ -11,10 +11,11 @@ def run() -> None:
 
         SELECT ?volume ?centroidX ?inertiaI
         WHERE {
-            sc:MountingBracket
+            sc:MountingBracket sc:hasMassProperties ?properties .
+            ?properties
                 sc:volumeMm3 ?volume ;
-                sc:centroidXmm ?centroidX ;
-                sc:principalInertiaIUnitDensity ?inertiaI .
+                sc:hasCentroid/sc:xMm ?centroidX ;
+                sc:hasPrincipalInertia/sc:iUnitDensity ?inertiaI .
         }
     """)
     )

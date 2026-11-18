@@ -13,7 +13,7 @@ def test_cad_to_rdf():
             graph.value(
                 Namespace(
                     "https://github.com/btinic/spacecraft-knowledge-graph#"
-                ).MountingBracket,
+                ).BracketMassProperties,
                 Namespace(
                     "https://github.com/btinic/spacecraft-knowledge-graph#"
                 ).volumeMm3,
@@ -26,10 +26,8 @@ def test_cad_to_rdf():
             graph.value(
                 Namespace(
                     "https://github.com/btinic/spacecraft-knowledge-graph#"
-                ).MountingBracket,
-                Namespace(
-                    "https://github.com/btinic/spacecraft-knowledge-graph#"
-                ).centroidXmm,
+                ).BracketCentroid,
+                Namespace("https://github.com/btinic/spacecraft-knowledge-graph#").xMm,
             )
         )
         == "-991.0149"
@@ -39,10 +37,10 @@ def test_cad_to_rdf():
             graph.value(
                 Namespace(
                     "https://github.com/btinic/spacecraft-knowledge-graph#"
-                ).MountingBracket,
+                ).BracketPrincipalInertia,
                 Namespace(
                     "https://github.com/btinic/spacecraft-knowledge-graph#"
-                ).principalInertiaIUnitDensity,
+                ).iUnitDensity,
             )
         )
         == "35770804.0520"
