@@ -17,15 +17,34 @@ def to_rdf(report: str) -> Graph:
         @prefix sc: <https://github.com/btinic/spacecraft-knowledge-graph#> .
 
         sc:MountingBracket
+            sc:hasMassProperties sc:BracketMassProperties ;
+            sc:modeledIn sc:BracketCADModel .
+
+        sc:BracketMassProperties
             sc:volumeMm3 {re.search(r"Volume:\s*([-\d.E+]+)", report).group(1)} ;
             sc:massUnitDensity {re.search(r"Mass:\s*([-\d.E+]+)", report).group(1)} ;
             sc:inertiaXUnitDensity {re.search(r"Moments of inertia:\s*X:\s*([-\d.E+]+)", report).group(1)} ;
-            sc:centroidXmm {centroid.group(1)} ;
-            sc:centroidYmm {centroid.group(2)} ;
-            sc:centroidZmm {centroid.group(3)} ;
-            sc:principalInertiaIUnitDensity {re.search(r"I:\s*([-\d.E+]+)", report).group(1)} ;
-            sc:principalInertiaJUnitDensity {re.search(r"J:\s*([-\d.E+]+)", report).group(1)} ;
-            sc:principalInertiaKUnitDensity {re.search(r"K:\s*([-\d.E+]+)", report).group(1)} .
+            sc:hasCentroid sc:BracketCentroid ;
+            sc:hasPrincipalInertia sc:BracketPrincipalInertia ;
+            sc:extractedFrom sc:BracketMassReport .
+
+        sc:BracketCentroid
+            sc:xMm {centroid.group(1)} ;
+            sc:yMm {centroid.group(2)} ;
+            sc:zMm {centroid.group(3)} .
+
+        sc:BracketPrincipalInertia
+            sc:iUnitDensity {re.search(r"I:\s*([-\d.E+]+)", report).group(1)} ;
+            sc:jUnitDensity {re.search(r"J:\s*([-\d.E+]+)", report).group(1)} ;
+            sc:kUnitDensity {re.search(r"K:\s*([-\d.E+]+)", report).group(1)} .
+
+        sc:BracketMassReport
+            sc:exportedFrom sc:BracketCADModel ;
+            sc:fileName "mounting_bracket.mpr" .
+
+        sc:BracketCADModel
+            sc:fileName "mounting_bracket.dwg" .
+
         """,
         format="turtle",
     )
